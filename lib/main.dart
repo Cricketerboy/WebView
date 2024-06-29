@@ -9,12 +9,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'WebView',
-        debugShowCheckedModeBanner: false,
-        routes: {
-          '/': (context) => Home(),
-          '/webViewContainer': (context) => WebViewContainer(),
-        });
+      title: 'WebView',
+      debugShowCheckedModeBanner: false,
+      home: Home(),
+    );
   }
 }
 
@@ -41,7 +39,8 @@ class _HomeState extends State<Home> {
     return Center(
       child: ElevatedButton(
         onPressed: () {
-          Navigator.of(context).pushNamed('/webViewContainer');
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => WebViewContainer()));
         },
         child: Text('Open Webview'),
       ),

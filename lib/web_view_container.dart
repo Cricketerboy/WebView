@@ -10,8 +10,8 @@ class WebViewContainer extends StatefulWidget {
 
 class _WebViewContainerState extends State<WebViewContainer> {
   final controller = WebViewController()
-    ..setJavaScriptMode(JavaScriptMode.disabled)
-    ..loadRequest(Uri.parse('http://prodtestv3.fleksa.de/'));
+    ..setJavaScriptMode(JavaScriptMode.unrestricted)
+    ..loadRequest(Uri.parse("https://prodtestv3.fleksa.de/"));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
